@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+Pro&display=swap');
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    color: #1A1B22;
+    margin: unset;
+}
+
+a {
+    color: #1A1B22;
+    text-decoration: unset;
+}
+
+li {
+    display: inline-block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: unset;
+}
+
+header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 80px;
+    padding: 0 7.22%;
+    box-shadow: inset 0px -1px 0px #D1D2D6;
+}
+
+.news-explorer-logo {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+header nav {
+    height: 100%;
+    margin-left: auto;
+}
+
+header nav ul {
+    height: 100%;
+    margin: unset;
+    padding: unset;
+}
+
+header nav ul li {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    height: 57%;
+    margin-top: 19px;
+}
+
+header nav ul li.active {
+    border-bottom: 3px solid #1A1B22;
+}
+
+header nav ul li:nth-child(2) {
+    margin: 0 32px 0 34px;
+}
+
+header nav ul li:last-child {
+    height: 48px;
+    padding: 0 15px 0 19px;
+    border: 1px solid #1A1B22;
+    box-sizing: border-box;
+    border-radius: 100px;
+}
+
+header nav ul li:last-child a p {
+    width: 54px;
+    display: inline-block;
+    margin-top: 11px;
+}
+
+header nav ul li:last-child a img {
+    margin-bottom: -7px;
+}
+
+header nav ul li a {
+}
+
+.saved-articles {
+    margin: 40px 7.22% 56px;
+}
+
+.saved-articles h1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: rgba(26, 27, 34, 0.5);
+
+    max-width: 712px;
+}
+
+.saved-articles h2 {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 46px;
+
+    max-width: 530px;
+    margin: 28px 0 30px;
+}
+
+.saved-articles p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 712px;
+}
+
+.cards-list {
+    background: #F5F6F7;
+    padding: 62px 7.22% 46px;
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card-item {
+    width: 400px;
+    max-width: 400px;
+    min-height: 576px;
+    margin-bottom: 16px;
+
+    background: #FFFFFF;
+    border-radius: 16px;
+
+    position: relative;
+}
+
+.card-item:nth-child(3n-1) {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.card-img {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.card-action {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    right: 24px;
+    
+    display: grid;
+    grid-template-columns: 0fr 1fr;
+    align-items: center;
+    justify-items: end;
+}
+
+.card-tag {
+    padding: 8px 12px;
+    background: #FFFFFF;
+    border-radius: 10px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.card-remove {
+    overflow: hidden;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.card-remove p {
+    background: #FFFFFF;
+    box-shadow: 0px 10px 22px rgba(59, 74, 116, 0.1);
+    border-radius: 10px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+
+    margin-right: 5px;
+    padding: 12px;
+
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+
+    transition: all .3s;
+
+    display: inline-block;
+    height: 40px;
+    box-sizing: border-box;
+    margin-bottom: -8px;
+}
+
+.card-remove-img {
+    padding: 8px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    height: 40px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.card-remove-img svg path {
+    transition: all .3s;
+}
+
+.card-remove:hover .card-remove-img svg path {
+    fill: #1A1B22;
+}
+
+.card-remove:hover p {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+}
+
+.card-info {
+    padding: 20px 24px 24px;
+}
+
+.card-date {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #B6BCBF;
+}
+
+.card-info h3 {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 30px;
+
+    margin-top: 12px;
+    margin-bottom: 16px;
+}
+
+.card-description {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+
+    margin-bottom: 18px;
+}
+
+.card-location {
+    font-family: Roboto Slab;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: #B6BCBF;
+
+    position: absolute;
+    bottom: 24px;
+}
+
+footer {
+    padding: 0 7.22%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.copyright {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #B6BCBF;
+
+    margin-top: 32px;
+    margin-bottom: 26px;
+}
+
+.footer-nav {
+    display: inline-block;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.footer-nav-text {
+    display: inline-block;
+}
+
+.footer-nav-text a {
+    display: inline-block;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.footer-nav-text a:first-child {
+    width: 112px;
+}
+
+.footer-nav-text a:last-child {
+    width: 192px;
+}
+
+.footer-social {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.footer-social a:first-child {
+    display: inline-block;
+    margin-right: 24px;
+}
+
+.mob-btn {
+    display: none;
+}
+
+@media (max-width: 320px) {
+    header {
+        height: initial;
+        padding: 16px;
+    }
+
+    .news-explorer-logo {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    .mob-btn {
+        display: initial;
+        margin-left: auto;
+    }
+
+    .saved-articles {
+        margin: 8px 16px 32px;
+    }
+
+    .saved-articles h1 {
+        font-size: 12px;
+        line-height: 24px;
+    }
+
+    .saved-articles h2 {
+        font-size: 30px;
+        line-height: 34px;
+        margin: 16px 0;
+    }
+
+    .cards-list {
+        padding: 24px 16px 14px;
+        grid-template-columns: 100%;
+    }
+
+    .card-item {
+        width: initial;
+        max-width: initial;
+        min-height: initial;
+        margin-bottom: 10px;
+    }
+
+    .card-item:nth-child(3n-1) {
+        margin-left: initial;
+        margin-right: initial;
+    }
+
+    .card-img {
+        width: 100%;
+    }
+
+    .card-action {
+        top: 16px;
+        left: 16px;
+        right: 16px;
+    }
+
+    .card-remove p {
+        display: none;
+    }
+
+    .card-info {
+        padding: 16px;
+    }
+
+    .card-info h3 {
+        font-size: 22px;
+        line-height: 26px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .card-description {
+        margin-bottom: 8px;
+    }
+
+    .card-location {
+        position: initial;
+    }
+
+    footer {
+        padding: 20px 16px;
+        grid-template-columns: 100%;
+    }
+
+    .copyright {
+        margin-top: 40px;
+        margin-bottom: initial;
+        grid-row: 2;
+    }
+
+    .footer-nav {
+        display: grid;
+        grid-template-columns: 70% 30%;
+    }
+
+    .footer-nav-text a {
+        text-align: left;
+        line-height: 48px;
+    }
+
+    .footer-social {
+        margin-left: auto;
+    }
+}
